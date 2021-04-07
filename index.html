@@ -21,7 +21,7 @@
         function sendAPICall() {
             var request = new XMLHttpRequest()
 
-            request.open('GET', 'https://10.2.1.244:8080/getIp')
+            request.open('GET', 'http://10.2.1.244:8080/getIp')
 
             request.onload = function() {
                 if(request.status === 200) {
