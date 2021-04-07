@@ -6,7 +6,7 @@
     <script>
         window.onload = function() {
             addPixel();
-            var response = sendAPICall();
+            sendAPICall();
             
         }
 
@@ -25,9 +25,6 @@
 
             request.onload = function() {
                 if(request.status === 200) {
-                    console.log(JSON.parse(request.response));
-                    console.log(request.HEADERS_RECEIVED);
-                     
                     return request.response;
                 }
                 else {
