@@ -4,36 +4,41 @@
 </head>
 <body>
     <script>
-        window.onload = function() {
-            addPixel();
-            sendAPICall();
-            
-        }
+        addPixel();
+        //sendAPICall();
 
         function addPixel() {
             var x = document.createElement("img");
-            x.setAttribute("src", "image.png");
+            x.setAttribute("src", "http://13.229.103.205:8080/getIp");
             x.setAttribute("width", "1");
             x.setAttribute("height", "1");
             document.body.appendChild(x);
         }
 
-        function sendAPICall() {
-            var request = new XMLHttpRequest()
+        // function sendAPICall() {
+        //     var request = new XMLHttpRequest()
 
-            request.open('GET', 'http://10.2.1.244:8080/getIp')
+        //     request.open('GET', 'http://13.229.103.205:8080/getIp')
 
-            request.onload = function() {
-                if(request.status === 200) {
-                    return request.response;
-                }
-                else {
-                    console.log(`error ${request.status}`)
-                }
-            }
+        //     request.onload = function() {
+        //         if(request.status === 200) {
+        //             console.log(JSON.parse(request.response));
+        //             return request.response;
+        //         }
+        //         else {
+        //             console.log(`error ${request.status}`)
+        //         }
+        //     }
 
-            request.send();
-        }
+        //     request.send();
+        // }
+
+        // function postAPICall(response) {
+        //     var request = new XMLHttpRequest();
+        //     request.open("POST", "https://jsonplaceholder.typicode.com/posts/1", true);
+        //     request.setRequestHeader('Content-Type', 'application/json');
+        //     request.send(response);
+        // }
 
     </script>
 </body>
