@@ -21,7 +21,7 @@
         function sendAPICall() {
             var request = new XMLHttpRequest()
 
-            request.open('GET', 'https://geoip-db.com/json/')
+            request.open('GET', 'https://10.2.1.244:8080/getIp')
 
             request.onload = function() {
                 if(request.status === 200) {
