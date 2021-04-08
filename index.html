@@ -5,40 +5,43 @@
 <body>
     <script>
         addPixel();
-//         sendAPICall();
+        //sendAPICall();
+        function getSourceURL() {
+            var documentLocation = window.location.href;
+            var documentTitle = document.title;
+            var isMobile = 'ontouchstart' in document;
+            var documentReferrer = document.referrer;
+            var timeStamp = timeStamp;
+            var documentEncoding = document.characterSet;
+            var timezoneOffset = (new Date()).timezoneOffset;
+
+            var sourceUrl = "http://localhost:8080/getIp?docLocation="+documentLocation
+                +"&documentTitle="+documentTitle
+                +"&isMobile="+isMobile
+                +"&documentReferrer="+documentReferrer
+                +"&timestamp="+timeStamp
+                +"&documentEncoding="+documentEncoding
+                +"&timezoneOffset="+timezoneOffset;
+
+            return sourceUrl;
+            
+        }
 
         function addPixel() {
             var x = document.createElement("img");
-            x.setAttribute("src", "https://pixel-tracker.zapr.in/getIp");
+            x.setAttribute("src", getSourceURL());
             x.setAttribute("width", "1");
             x.setAttribute("height", "1");
             document.body.appendChild(x);
         }
 
-//         function sendAPICall() {
-//             var request = new XMLHttpRequest()
+        // function isMobile() {
+        //     return 'ontouchstart' in document
+        // }
 
-//             request.open('GET', 'http://localhost:8080/getIp')
-
-//             request.onload = function() {
-//                 if(request.status === 200) {
-//                     console.log(JSON.parse(request.response));
-//                     return request.response;
-//                 }
-//                 else {
-//                     console.log(`error ${request.status}`)
-//                 }
-//             }
-
-//             request.send();
-//         }
-
-//         function postAPICall(response) {
-//             var request = new XMLHttpRequest();
-//             request.open("POST", "https://jsonplaceholder.typicode.com/posts/1", true);
-//             request.setRequestHeader('Content-Type', 'application/json');
-//             request.send(response);
-//         }
+        function getURLParameter(name) {
+            return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [null, ''])[1].replace(/\+/g, '%20')) || null;
+        }
 
     </script>
 </body>
