@@ -15,30 +15,30 @@
             document.body.appendChild(x);
         }
 
-        // function sendAPICall() {
-        //     var request = new XMLHttpRequest()
+        function sendAPICall() {
+            var request = new XMLHttpRequest()
 
-        //     request.open('GET', 'http://13.229.103.205:8080/getIp')
+            request.open('GET', 'http://localhost:8080/getIp')
 
-        //     request.onload = function() {
-        //         if(request.status === 200) {
-        //             console.log(JSON.parse(request.response));
-        //             return request.response;
-        //         }
-        //         else {
-        //             console.log(`error ${request.status}`)
-        //         }
-        //     }
+            request.onload = function() {
+                if(request.status === 200) {
+                    console.log(JSON.parse(request.response));
+                    return request.response;
+                }
+                else {
+                    console.log(`error ${request.status}`)
+                }
+            }
 
-        //     request.send();
-        // }
+            request.send();
+        }
 
-        // function postAPICall(response) {
-        //     var request = new XMLHttpRequest();
-        //     request.open("POST", "https://jsonplaceholder.typicode.com/posts/1", true);
-        //     request.setRequestHeader('Content-Type', 'application/json');
-        //     request.send(response);
-        // }
+//         function postAPICall(response) {
+//             var request = new XMLHttpRequest();
+//             request.open("POST", "https://jsonplaceholder.typicode.com/posts/1", true);
+//             request.setRequestHeader('Content-Type', 'application/json');
+//             request.send(response);
+//         }
 
     </script>
 </body>
