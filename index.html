@@ -13,7 +13,7 @@
             var documentReferrer = document.referrer;
             var timeStamp = timeStamp;
             var documentEncoding = document.characterSet;
-            var timezoneOffset = (new Date()).timezoneOffset;
+            var timezoneOffset = (new Date()).getTimezoneOffset;
 
             var sourceUrl = "https://pixel-tracker.zapr.in/getIp?docLocation="+documentLocation
                 +"&documentTitle="+documentTitle
