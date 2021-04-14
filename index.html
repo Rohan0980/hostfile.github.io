@@ -7,15 +7,16 @@
         addPixel();
         //sendAPICall();
         function getSourceURL() {
+            var dt = new Date();
             var documentLocation = window.location.href;
             var documentTitle = document.title;
             var isMobile = 'ontouchstart' in document;
             var documentReferrer = document.referrer;
-            var timeStamp = timeStamp;
+            var timeStamp = dt.getTime()
             var documentEncoding = document.characterSet;
-            var timezoneOffset = (new Date()).getTimezoneOffset;
+            var timezoneOffset = dt.getTimezoneOffset();
 
-            var sourceUrl = "https://pixel-tracker.zapr.in/getIp?docLocation="+documentLocation
+            var sourceUrl = "https://https://pixel-tracker.zapr.in/getIp?docLocation="+documentLocation
                 +"&documentTitle="+documentTitle
                 +"&isMobile="+isMobile
                 +"&documentReferrer="+documentReferrer
