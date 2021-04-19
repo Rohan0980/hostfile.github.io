@@ -12,7 +12,7 @@
             var dt = new Date();
             var isMobile = 'ontouchstart' in document;            
 
-            return encodeURI("https://pixel-tracker.zapr.in/getIp?docLocation="+window.location.href
+            return "https://pixel-tracker.zapr.in/getIp?docLocation="+window.location.href
                 +"&documentTitle="+document.title
                 +"&isMobile="+isMobile
                 +"&documentReferrer="+document.referrer
@@ -20,7 +20,7 @@
                 +"&documentEncoding="+document.characterSet
                 +"&timezoneOffset="+dt.getTimezoneOffset()
                 +"&height="+window.screen.height
-                +"&width="+window.screen.width)
+                +"&width="+window.screen.width
             
         }
 
